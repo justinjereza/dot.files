@@ -1,0 +1,35 @@
+#!/usr/bin/env perl
+
+use strict;
+use warnings;
+
+use Cwd;
+use File::Basename;
+
+my $CWD = cwd();
+my $NAME = basename($0);
+my $HOME = $ENV{'HOME'};
+
+opendir(my $dh, $CWD);
+
+my @files = readdir($dh);
+# Filter out hidden files, current directory, parent directory, and this script
+@files = grep(!/^(?:\.|$NAME)/, @files);
+# Filter out file names completely in uppercase, optionally with markdown extension
+@files = grep(!/^[A-Z]+(?:\.md)?$/, @files);
+# Filter out vim swap files
+@files = grep(!/\.sw(?:p|o)$/, @files);
+
+foreach my $rc (@files) {
+    my $source = "$CWD/$rc";
+    my $target = "$HOME/.$rc";
+
+    if (! -l $target) {
+        print "Linking $target to $source...\n";
+        symlink($source, $target);
+    } else {
+        print "$target exists. Skipping...\n";
+    }
+}
+
+closedir($dh);

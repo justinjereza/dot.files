@@ -1,0 +1,7 @@
+*VT100.background: black
+*VT100.foreground: green
+*VT100.loginShell: true
+*VT100.eightBitInput: false
+*VT100.metaSendsEscape: true
+*VT100.utf8: 1
+*VT100.utf8Fonts.font: -xos4-terminus-medium-r-normal--20-200-72-72-c-100-iso10646-1

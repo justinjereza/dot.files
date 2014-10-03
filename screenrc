@@ -1,0 +1,20 @@
+defutf8 on
+
+shell -$SHELL
+startup_message off
+caption always '%{= Yk}%-Lw%50>%{= kY}%{+b}%n*%f %t%{= Yk}%+Lw%<'
+hardstatus alwayslastline '%{= bW}%{+b}[%H]%=[%LD %d %LM %Y %0C:%s %A]'
+
+# terminfo and termcap for nice 256 color terminal
+# allow bold colors - necessary for some reason
+attrcolor b ".I"
+# tell screen how to set colors. AB = background, AF=foreground
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+# erase background with current bg color
+defbce "on"
+
+term "xterm-color"
+
+setenv LD_LIBRARY_PATH $HOME/local/lib
+
+screen irssi

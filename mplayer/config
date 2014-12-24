@@ -1,0 +1,12 @@
+# Write your default config options here!
+
+fs=yes
+af=volnorm
+ass=yes
+#aid=0
+#sid=0
+#aid=1
+#sid=1
+#alang=eng
+#alang=jpn
+#slang=eng

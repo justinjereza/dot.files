@@ -19,6 +19,8 @@ my @files = readdir($dh);
 @files = grep(!/^[A-Z]+(?:\.md)?$/, @files);
 # Filter out vim swap files
 @files = grep(!/\.sw(?:p|o)$/, @files);
+# Filter out file names with a dash to account for -osx, etc.
+@files = grep(!/-/, @files);
 
 foreach my $rc (@files) {
     my $source = "$CWD/$rc";

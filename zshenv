@@ -15,6 +15,9 @@ OS="$(echo $OSTYPE | sed 's,^\([a-z]*\).*,\1,')"
 [[ -d "$HOME/.pyenv/bin" ]] && path=("$HOME/.pyenv/bin" $path) && eval "$(pyenv init -)"
 [[ -d "$HOME/.local/bin" ]] && path=("$HOME/.local/bin" $path)
 
+NVM_DIR="$HOME/.nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh" # This loads nvm
+
 PROJECT_HOME="$HOME/Projects"
 [[ -s "$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh" ]] && \
 	source "$HOME/Library/Python/2.7/bin/virtualenvwrapper.sh"

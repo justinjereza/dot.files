@@ -15,9 +15,4 @@ esac
 
 alias ll='la -l'
 
-alias git-log='git log --color --graph --oneline --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset"'
-alias git-fixup='git commit -a --fixup'
-alias git-squash='git commit -a --squash'
-alias git-rebase='git rebase -i --autosquash'
-
 [[ -s $HOME/.local/bin/virtualenvwrapper.sh ]] && source $HOME/.local/bin/virtualenvwrapper.sh

@@ -1,3 +1,10 @@
 [user]
 	name = Justin Jereza
 	email = justinjereza@gmail.com
+[core]
+	editor = /opt/sublime_text/sublime_text -nw
+[alias]
+	log-line = log --color --graph --oneline --pretty=format:\"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an>%Creset\"
+	fixup = commit -a --fixup
+	squash = commit -a --squash
+	rebase-auto = rebase -i --autosquash
